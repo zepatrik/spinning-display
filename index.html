@@ -1,0 +1,21 @@
+<html>
+<head>
+    <title>Spinnig display</title>
+</head>
+<body>
+    <h1>Super fancy spinning display</h1>
+    <h2>made by Andi and Patrik during Athens November 2018</h2>
+    <input type="text" id="T">
+    <h3 style="color: red;"></h3>
+    <script>
+      document.getElementById('T').oninput = (e) => {
+        fetch(window.location.href, {
+          method: 'POST',
+          body: e.target.value
+        }).catch(() => document.getElementsByTagName('h3')[0].innerText 
+= 'There was an error.')
+      }
+    </script>
+</body>
+</html>
+
